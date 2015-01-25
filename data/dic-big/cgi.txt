@@ -1,0 +1,1 @@
+/mart/mart_admin.cgi

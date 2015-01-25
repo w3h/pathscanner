@@ -1,0 +1,15 @@
+/config/config_global.php.bak
+/config/config_ucenter.php.bak
+/config.inc.php.bak
+/www.rar
+/www.zip
+/www.tar.gz
+/wwwroot.rar
+/wwwroot.zip
+/wwwroot.tar.gz
+/web.rar
+/web.zip
+/web.tar.gz
+/bbs.rar
+/bbs.zip
+/bbs.tar.gz
