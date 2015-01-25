@@ -2,7 +2,7 @@
 pathscanner
 
 
-         D:\pathscanner>pathscanner.py -t http://www.geostar.com.cn
+         D:\pathscanner>pathscanner.py -t http://www.xxx.com.cn
          ......................................................................
                   (__)
                   (oo)
@@ -12,14 +12,14 @@ pathscanner
          ~~   ~~
          .... Good Luck for you today .......
          ......................................................................
-         [ Target]: http://www.geostar.com.cn
+         [ Target]: http://www.xxx.com.cn
          [ Server]: Microsoft-IIS/7.5
          [ Script]: ['common', 'php']
          [   data]: None
          [ Thread]: 10
          [TimeOut]: 10
          [Numbers]: 1372
-         [ Output]: D:\pathscanner./output/www.geostar.com.cn.html
+         [ Output]: D:\pathscanner./output/www.xxx.com.cn.html
 
          [+] 200 : /robots.txt
          [+] 200 : /index.php/module/action/param1/%7B$%7Bphpinfo()%7D%7D
