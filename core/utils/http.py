@@ -3,7 +3,7 @@
 
 import urllib, os
 import urllib2
-import pycurl
+#import pycurl
 
 try:
     import json

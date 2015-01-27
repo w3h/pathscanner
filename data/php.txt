@@ -1323,3 +1323,6 @@
 /base/include/download.php?filename=mysql_data.sql.gz&path=/opt/
 /download.php?fname=1.txt&fpath=./include.inc/config.inc.php
 /my.php?item=buddylist
+/plus/ajax_common.php?act=hotword&query=%88%ec%27
+/mapp/index.php/module/action/param1/$%7B@phpinfo()%7D
+/bbs/misc.php?mod=stat&op=trend&xml=1&merge=1&types[1]=x
