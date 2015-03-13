@@ -824,4 +824,7 @@
 /admin_.aspx
 /GovUserControl/FileUpLoad.aspx?type=jpg,jpeg,bmp,gif,png&preference=1&formatType=img&targetFile=GovCwImg&openFile=GovCwImg&t=Thu%20Sep%2004%202014%2010%3A42%3A43%20GMT%2B0800%20(%E4%B8%AD%E5%9B%BD%E6%A0%87%E5%87%86%E6%97%B6%E9%97%B4)
 /custom/CompanyCGList.aspx?ComId=1
-/Easy/Login2.aspx
+/custom/groupnewslist.aspx?GroupId=155
+/e/database/v3.mdb
+/e/master/login.aspx
+/custom/GroupNewsList.aspx?GroupId=114
