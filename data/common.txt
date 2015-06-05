@@ -90,3 +90,16 @@
 /wwwroot.zip
 /www.zip
 /web.zip
+/date.tgz
+/data/config.xml
+/common/shell/BillBack.sh
+/cgi-bin/webapp?op=_zj_orib_ilzxi_bafq_pelt&amp;method=edit&amp;rowid=ping'
+/console/
+/phpMyAdmin/
+/../ver.txt
+/../../../WINDOWS/ODBC.INI
+/cgi-pub/exportdata.cgi?type=3&begintime=20140101&endtime=20990226
+/cgi-pub/exportdata.cgi?type=1&begintime=20140101&endtime=20990226
+/cgi-pub/exportdata.cgi?type=12&begintime=20150101&endtime=20990226
+/editor/upload.html
+/mailmain?type=login&uid=nobody&pwd=&domain=root&style=enterprise   

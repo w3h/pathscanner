@@ -8,7 +8,6 @@ import copy
 import sys,os
 from core.utils.threadpuul import ThreadPool
 
-
 g_scan_sum = 0
 g_scan_currnum = 0
 
@@ -25,7 +24,9 @@ def banner():
     print info
 
 def usage():
-    MSG_USAGE = "pathscanner.py [ -t <ur>] [-s <script-type>] [--d <datafile> ] [--thread <thread num>] [--timeout <timeout>]"
+    MSG_USAGE = "pathscanner.py [-t <url>] [-s <script-type>] [-d <datafile> ] " \
+                "[--thread <thread num defult:10>] [--timeout <timeout defult:10>]  " \
+                "[--delay <delay time defult:5>]"
     parser = OptionParser(MSG_USAGE) 
     parser.add_option("-t", "--target", dest="target", default=False, help="Scanning the target")
     parser.add_option("-s", "--script", dest="script", default="", help="Scanning the type of script (jsp | asp | aspx | php | all)")
@@ -36,7 +37,7 @@ def usage():
     (options, args) = parser.parse_args()
 
     if not options.target:
-        parser.error("incorrect the target")  
+        parser.error("incorrect the target")
         sys.exit(1)
     if not CheckTarget(options.target):
         parser.error("incorrect the target")  

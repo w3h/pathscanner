@@ -828,3 +828,13 @@
 /e/database/v3.mdb
 /e/master/login.aspx
 /custom/GroupNewsList.aspx?GroupId=114
+/xsweb/_data/NEWS.aspx?href=633409086902360000.xml
+/xsweb/pub/Yx_Zy_Bj.aspx?yx=wooyun
+/e/master/login.aspx
+/e/database/v3.mdb
+/sys/login.aspx
+/new/add_fapiao.aspx
+/upload.aspx
+/admin/sharedata.aspx
+/G2S/AdminSpace/PublicClass/AddCathedraWare.aspx
+/G2S//AdminSpace/PublicClass/AddCourseWare.aspx

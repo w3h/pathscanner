@@ -46,6 +46,9 @@ class MainFrame(wx.Frame):
         self._mgr.SetManagedWindow(self)
         self.currnum = 0
         self.starttime = 0
+        self.fileTarget = ""
+        self.scanTarget = ""
+        self.scanTargetCurrpos = 0
 
         self.InitUI()
         self.BindEvents()
@@ -202,11 +205,11 @@ class MainFrame(wx.Frame):
     def OnSelTarget(self, evt):
         sel = wx.FileSelector("Choose a file",  os.getcwd())
         self.target.SetLabelText(str(sel)) 
+        self.fileTarget = str(sel)
 
-    def OnStart(self, evt):
-        self.ClearResult()
-        self.GetCmdPara()
-
+    def OnStartByTarget(self, tt):
+        if not tt: return
+        self.GetCmdPara(tt)
         if not self.CheckCmdPara(): return
 
         self.start.Disable()
@@ -214,15 +217,46 @@ class MainFrame(wx.Frame):
         self.threadsc.Disable()
         self.AddTargetList()
         self.cmdpara.GetScanNum()
-        #self.starttime = datetime.datetime.now()
         self.currnum = 0
-
-        # init log file
-        common.InitLog(self.cmdpara.target)
 
         self.ThreadLogMessage("start scan...\n")
         self.ThreadLogMessage(self.cmdpara.GetPara())
         self.mainthread.startscan()
+
+    def GetFirstTarget(self):
+        tmp = self.target.GetValue()
+        if not os.path.isfile(tmp):
+            return tmp
+        else:
+            self.fileTarget = tmp
+            self.scanTargetCurrpos = 0
+
+        with open(self.fileTarget) as fp:
+            lines = fp.readlines()
+            return lines[0].strip()
+
+    def GetNextTarget(self):
+        if not os.path.isfile(self.fileTarget):
+            return None
+
+        with open(self.fileTarget) as fp:
+            lines = fp.readlines()
+            self.scanTargetCurrpos = self.scanTargetCurrpos + 1
+            if self.scanTargetCurrpos >= len(lines):
+                return None
+
+            return lines[self.scanTargetCurrpos].strip()
+
+    def OnStart(self, evt):
+        self.ClearResult()
+        ft = self.GetFirstTarget()
+        if not ft:
+            wx.MessageBox(u"扫描目标对象不能为空！", u"错误")
+            return
+
+        # init log file
+        common.InitLog(ft)
+        self.OnStartByTarget(ft)
 
     def OnStop(self, evt):
         self.stop.Disable()
@@ -325,8 +359,8 @@ class MainFrame(wx.Frame):
         self.cmdpara = ShellPara()
         self.cmdpara.SetScriptType(stype)
 
-    def GetCmdPara(self):
-        self.cmdpara.SetTarget(self.target.GetValue())
+    def GetCmdPara(self, tt):
+        self.cmdpara.SetTarget(tt)
         self.GetScriptType()
 
     def CheckCmdPara(self):
@@ -429,4 +463,8 @@ class MainFrame(wx.Frame):
         self.threadsc.Enable()
 
         self.FlushBarTime(True)
+
+        # scan next target
+        nt = self.GetNextTarget()
+        if nt: self.OnStartByTarget(nt)
 

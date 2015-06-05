@@ -62,7 +62,10 @@ class MainThread(threading.Thread):
             self.SendStatusMsg("Scanning ...")
 
             for t in self.threads:
-                t.start()
+                try:
+                    t.start()
+                except:
+                    pass
 
             # wait thread
             for t in self.threads:

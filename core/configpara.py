@@ -94,6 +94,7 @@ class ConfigPara:
     def SetScriptType(self, st):
         if isinstance(st, basestring):
             self.scripttype = st
+            self.SaveItem("scripttype", st)
             return
 
         if not st:
